@@ -691,7 +691,7 @@ class WidgetsHTMLDecoder {
     final backgroundColorStr = cssMap["background-color"];
     final backgroundColor = backgroundColorStr == null
         ? null
-        : ColorExtension.tryFromRgbaString(backgroundColorStr);
+        : ColorExtension.tryFromString(backgroundColorStr);
     if (backgroundColor != null) {
       style = style.copyWith(color: backgroundColor);
     }
@@ -699,7 +699,7 @@ class WidgetsHTMLDecoder {
     ///apply background color on text
     final colorstr = cssMap["color"];
     final color =
-        colorstr == null ? null : ColorExtension.tryFromRgbaString(colorstr);
+        colorstr == null ? null : ColorExtension.tryFromString(colorstr);
     if (color != null) {
       style = style.copyWith(color: color);
     }

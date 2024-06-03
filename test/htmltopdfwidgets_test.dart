@@ -24,6 +24,8 @@ late Document pdf;
 void main() {
   const htmlText = '''  <h1>Heading Example</h1>
   <p>This is a paragraph.</p>
+  <p style="color: #ff0000;">This is a paragraph in red (HEX).</p>
+  <p style="color: rgba(255, 0, 0, 1);">This is a paragraph in red (rgba).</p>
   <img src="image.jpg" alt="Example Image" />
   <blockquote>This is a quote.</blockquote>
   <ul>
