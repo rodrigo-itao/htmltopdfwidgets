@@ -263,18 +263,6 @@ class WidgetsHTMLDecoder {
 
         break;
 
-      /// Handle <span>  <mark> element
-      case HTMLTags.span || HTMLTags.mark:
-        final deltaAttributes = _getDeltaAttributesFromHtmlAttributes(
-          element.attributes,
-        );
-        textAlign = deltaAttributes.$1;
-        attributes = attributes.merge(deltaAttributes.$2);
-        if (deltaAttributes.$2.decoration != null) {
-          decoration.add(deltaAttributes.$2.decoration!);
-        }
-        break;
-
       /// Handle <a> element
       case HTMLTags.anchor:
         final href = element.attributes['href'];
@@ -296,6 +284,15 @@ class WidgetsHTMLDecoder {
         break;
       default:
         break;
+    }
+
+    final deltaAttributes = _getDeltaAttributesFromHtmlAttributes(
+      element.attributes,
+    );
+    textAlign = deltaAttributes.$1;
+    attributes = attributes.merge(deltaAttributes.$2);
+    if (deltaAttributes.$2.decoration != null) {
+      decoration.add(deltaAttributes.$2.decoration!);
     }
 
     for (final child in element.children) {

@@ -26,6 +26,8 @@ void main() {
   <p>This is a paragraph.</p>
   <p style="color: #ff0000;">This is a paragraph in red (HEX).</p>
   <p style="color: rgba(255, 0, 0, 1);">This is a paragraph in red (rgba).</p>
+  <p><strong style="color: #ff0000;">This is a paragraph in bold and red.</strong></p>
+  <p><strong style="color: #ff0000;"><em>This is a paragraph in bold, italic and red.</em></strong></p>
   <img src="image.jpg" alt="Example Image" />
   <blockquote>This is a quote.</blockquote>
   <ul>
@@ -51,8 +53,6 @@ void main() {
   </tr>
 </table>''';
   setUpAll(() {
-    Document.debug = true;
-    RichText.debug = true;
     pdf = Document();
   });
 
