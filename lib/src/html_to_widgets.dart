@@ -690,10 +690,10 @@ class WidgetsHTMLDecoder {
         ? null
         : ColorExtension.tryFromString(backgroundColorStr);
     if (backgroundColor != null) {
-      style = style.copyWith(color: backgroundColor);
+      style = style.copyWith(background: BoxDecoration(color: backgroundColor));
     }
 
-    ///apply background color on text
+    ///apply color on text
     final colorstr = cssMap["color"];
     final color =
         colorstr == null ? null : ColorExtension.tryFromString(colorstr);
